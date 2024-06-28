@@ -30,7 +30,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String getUsername=t1.getText().toString();
                 String getPassword=t2.getText().toString();
-                Toast.makeText(getApplicationContext(),getUsername+" "+getPassword,Toast.LENGTH_LONG).show();
+                if(getUsername.equals("admin") && getPassword.equals("12345"))
+                {
+                    Intent i=new Intent(getApplicationContext(),MainActivity2.class);
+                    startActivity(i);
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(),"Invalid credentials",Toast.LENGTH_LONG).show();
+                }
+
 
             }
         });
